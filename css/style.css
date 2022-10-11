@@ -422,6 +422,45 @@ body {
   opacity: 0;
   transform: translateY(-4rem); }
 
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 5rem; }
+
+.form__radio-btn {
+  position: absolute;
+  top: -0.4rem;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 3px solid #55c57a;
+  display: inline-block; }
+  .form__radio-btn::after {
+    width: 1.5rem;
+    height: 1.5rem;
+    content: "";
+    border-radius: 50%;
+    background-color: #55c57a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-btn::after {
+  opacity: 1; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img//hero.jpg);
