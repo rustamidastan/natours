@@ -7,11 +7,28 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
 }
 
 .row {
@@ -19,16 +36,49 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
+  @include respond(tab-land) {
+    max-width: 90rem;
+  }
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .col-1-of-2 {
   width: 48%;
+
+  @include respond(tab-port) {
+    width: 90%;
+
+    &:first-child {
+      margin-bottom: 4rem;
+    }
+  }
 }
 
 .col-1-of-4 {
   width: 22%;
+
+  @include respond(tab-port) {
+    width: 50rem;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
 }
 
 .col-1-of-3 {
   width: 30%;
+
+  @include respond(tab-port) {
+    width: 60rem;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
 }
